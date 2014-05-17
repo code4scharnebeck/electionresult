@@ -38,26 +38,26 @@ function updateInfo(props) {
 
 
 var map = L.map('map', {
-  center: [52.002005, 7.596157],
-  zoom: 13
+  center: [52.05840151921515, 7.8476715087890625],
+  zoom: 11
 });
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
 }).addTo(map);
 
 
-//Add the candidates to the map
+//Add the sections to the map
 $.getJSON( "sections.json", function( json ) {
   geojson = L.geoJson(json, {
-  style: {
-    weight: 2,
-    opacity: 1,
-    color: 'white',
-    fillOpacity: 0.3,
-    fillColor: '#FEB24C'
-  },
-  onEachFeature: onEachFeature
-}).addTo(map);
+    style: {
+      weight: 2,
+      opacity: 1,
+      color: 'white',
+      fillOpacity: 0.3,
+      fillColor: '#FEB24C'
+    },
+    onEachFeature: onEachFeature
+  }).addTo(map);
 });
 
 //Load the candidates
