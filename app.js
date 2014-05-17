@@ -38,7 +38,7 @@ function updateInfo(props) {
 
 
 var map = L.map('map', {
-  center: [52.05840151921515, 7.8476715087890625],
+  center: [51.95738424719267, 7.601165771484375],
   zoom: 11
 });
 L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
