@@ -1,5 +1,5 @@
 var geojson, candidates, template = Handlebars.compile($('#candidates_template').html());
-
+var lastClickedLayer;
 
 
 function highlightFeature(e) {
@@ -24,10 +24,29 @@ function resetHighlight(e) {
   updateInfo();
 }
 
+function clickUpdate(e) {
+
+  if(lastClickedLayer) {
+
+    resetHighlight(lastClickedLayer);
+
+    if(e.layer._leaflet_id === lastClickedLayer.layer._leaflet_id) {
+      lastClickedLayer = undefined;
+    } else {
+      lastClickedLayer = e;
+      highlightFeature(e);
+    }
+
+  } else {
+    lastClickedLayer = e;
+    highlightFeature(e);
+  }
+
+}
+
 function onEachFeature(feature, layer) {
   layer.on({
-    mouseover: highlightFeature,
-    mouseout: resetHighlight
+    click : clickUpdate
   });
 }
 
