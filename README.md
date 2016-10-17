@@ -1,10 +1,23 @@
-#kandidaten-ms
+# Election Result
 
+## About
+Map to visualize the election result of 'Samtgemeinderatswahl' in Scharnebeck 2016. 
 
-##Über
-Karte mit den Kandidaten für die Kommunalwahl in Münster 2014. Erstellt mit Leaflet und Daten von [CodeForMuenster](https://github.com/codeformuenster/open-data).
+Created with
+* Leaflet 1.0.0-rc3
+* bootstrap/3.3.7
+* ...
 
+Polygons from [Openstreetmap]("http://overpass-turbo.eu/s/iY9") 
+Data copied from <a href="http://wahl.luenecom.de/scharnebeck/Samtgemeinderat2016.html">here</a>.
 
-##Demo
+## Demo
+ [![Foo](preview.png)](http://kartenkarsten.github.io/electionresult/)
 
-[![Foo](preview.png)](http://c0dr.github.io/kandidaten-ms/)
+## Use it
+* save osm boundries as `sections.geojson` with [this tool]("http://overpass-turbo.eu/s/iY9")
+* fill a csv-file with the election result
+* change the method `prepareRawdata` to create an defined `electionResult` object
+* change map center + zoom
+* change text on `index.html`
+
